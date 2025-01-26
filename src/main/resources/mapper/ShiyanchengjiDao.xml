@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShiyanchengjiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShiyanchengjiEntity" id="shiyanchengjiMap">
+        <result property="shiyanmingcheng" column="shiyanmingcheng"/>
+        <result property="banji" column="banji"/>
+        <result property="xuehao" column="xuehao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="laoshizhanghao" column="laoshizhanghao"/>
+        <result property="laoshixingming" column="laoshixingming"/>
+        <result property="laoshipingfen" column="laoshipingfen"/>
+        <result property="laoshibili" column="laoshibili"/>
+        <result property="xueshengpingfen" column="xueshengpingfen"/>
+        <result property="xueshengbili" column="xueshengbili"/>
+        <result property="wanchenghuping" column="wanchenghuping"/>
+        <result property="hupingbili" column="hupingbili"/>
+        <result property="chengji" column="chengji"/>
+        <result property="pingyu" column="pingyu"/>
+        <result property="dengjiriqi" column="dengjiriqi"/>
+        <result property="crossuserid" column="crossuserid"/>
+        <result property="crossrefid" column="crossrefid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShiyanchengjiVO" >
+		SELECT * FROM shiyanchengji  shiyanchengji         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShiyanchengjiVO" >
+		SELECT  shiyanchengji.* FROM shiyanchengji  shiyanchengji
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShiyanchengjiView" >
+
+		SELECT  shiyanchengji.* FROM shiyanchengji  shiyanchengji 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShiyanchengjiView" >
+		SELECT * FROM shiyanchengji  shiyanchengji <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>

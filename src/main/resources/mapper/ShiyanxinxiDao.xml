@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShiyanxinxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShiyanxinxiEntity" id="shiyanxinxiMap">
+        <result property="shiyanmingcheng" column="shiyanmingcheng"/>
+        <result property="banji" column="banji"/>
+        <result property="kaishishijian" column="kaishishijian"/>
+        <result property="shiyanshishu" column="shiyanshishu"/>
+        <result property="shiyanmude" column="shiyanmude"/>
+        <result property="fengmian" column="fengmian"/>
+        <result property="fabushijian" column="fabushijian"/>
+        <result property="shiyanzhunbei" column="shiyanzhunbei"/>
+        <result property="shiyanyaoqiu" column="shiyanyaoqiu"/>
+        <result property="jiezhishijian" column="jiezhishijian"/>
+        <result property="shiyanneirong" column="shiyanneirong"/>
+        <result property="laoshizhanghao" column="laoshizhanghao"/>
+        <result property="laoshixingming" column="laoshixingming"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShiyanxinxiVO" >
+		SELECT * FROM shiyanxinxi  shiyanxinxi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShiyanxinxiVO" >
+		SELECT  shiyanxinxi.* FROM shiyanxinxi  shiyanxinxi
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShiyanxinxiView" >
+
+		SELECT  shiyanxinxi.* FROM shiyanxinxi  shiyanxinxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShiyanxinxiView" >
+		SELECT * FROM shiyanxinxi  shiyanxinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
